@@ -135,6 +135,7 @@ footer
     font-family: cursive;
     color: red;
 }
+/*This may possibly be unused*/
 .menu-page-item
 {
     font-family: 'Times New Roman', Times, serif;
@@ -148,11 +149,13 @@ footer
     font-size: 45px;
     grid-area: title;
 }
+/*Format subtitle if needed*/
 .menu-subtitle
 {
     font-size: 25px;
     grid-area: subtitle;
 }
+/*Formats image*/
 .menu-image
 {
     grid-area: image;
@@ -160,12 +163,14 @@ footer
     border-top: 1px solid black;
 
 }
+/*Formats Description*/
 .menu-description
 {
     grid-area: description;
     text-align: center;
     border-top: 1px solid black;
 }
+/*Formats Price*/
 .menu-price
 {
     grid-area: price;
