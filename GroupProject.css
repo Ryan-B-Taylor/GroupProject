@@ -26,12 +26,36 @@ header
 
 nav
 {
-    grid-area: sidebar;
+    grid-area: nav;
     border: 1px solid black; 
-    margin: 5px 5px 5px 5px;       
-    padding: 2px 2px 2px 2px;
+    margin: 5px 5px 5px 5px;     
 }
-
+/*Link list formatting to make it horizontal*/
+ul.link-menu
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e05937;
+    
+}
+li.link-item
+{
+    float: left;
+}
+li.link-item a 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+li.link-item a:hover 
+{
+    background-color: #d30f0f;
+}
 main
 {
     grid-area: content;
@@ -54,11 +78,12 @@ footer
 .page-container
 {
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-          "header    header"
-          "sidebar   content"
-          "footer    footer";
+        "nav       nav"
+        "header    header"
+        "content   content"
+        "footer    footer";
 }
 /* Column formatting*/
 .row
@@ -115,9 +140,70 @@ footer
     font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
 }
-.menu-article
+/*menu grid formatting*/
+.menu-title
 {
+    font-family: cursive;
+    color: red;
+    font-size: 45px;
+    grid-area: title;
+}
+.menu-subtitle
+{
+    font-size: 25px;
+    grid-area: subtitle;
+}
+.menu-image
+{
+    grid-area: image;
+    text-align: left;
+    border-top: 1px solid black;
+
+}
+.menu-description
+{
+    grid-area: description;
+    text-align: center;
+    border-top: 1px solid black;
+}
+.menu-price
+{
+    grid-area: price;
+    text-align: right;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+
+}
+.menu-container
+{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+        "title  title   title"
+        "subtitle subtitle subtitle"
+        "image  description  price";
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px
 }
-/*Test Comment*/
+/*This was the only way I thought of getting a bottom border
+without creating overlapping borders*/
+.menu-container-end
+{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+        "title  title   title"
+        "subtitle subtitle subtitle"
+        "image  description  price";
+    border-bottom: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px
+    
+}
+/*menu table formatting*/
+.menu-table
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
