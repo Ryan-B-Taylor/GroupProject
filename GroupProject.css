@@ -1,11 +1,10 @@
-/* List formatting */
-article
+/* Section formatting */
+section
 {
     text-align: center;
-    border: 1px solid black;
     margin: 5px 5px 5px 5px;
 }
-
+/* General Formatting*/
 body
 {
     background-color: rgb(206, 182, 77);
@@ -21,9 +20,11 @@ header
     border: 1px solid black; 
     margin: 5px 5px 5px 5px;       
     padding: 2px 2px 2px 2px;
+    font-family: cursive;
+    color: red;
 }
 
-
+/*nav bar formatting*/
 nav
 {
     grid-area: nav;
@@ -73,6 +74,8 @@ footer
     border: 1px solid black; 
     margin: 5px 5px 5px 5px;       
     padding: 2px 2px 2px 2px;
+    font-family: cursive;
+    color: red;
 }
 
 .page-container
@@ -85,62 +88,55 @@ footer
         "content   content"
         "footer    footer";
 }
-/* Column formatting*/
-.row
-{
-    display: flex;
-}
-.column
-{
-    flex: 50%;
-}
-/*Formatting for uneven columns*/
-.column-left
-{
-    float: left;
-}
-.left, .right 
-{
-    width: 25%;
-}
-.middle {
-    width: 50%;
-}
+
+
 /* Home page formatting*/
-.home-header
+
+/* hour list background format */
+.hours
 {
-    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    background-position: center;
+    
+}
+/* hour list format*/
+.hour-list
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+/* format for the title of the hours */
+.hour-title
+{
+    font-style: italic;
+    color: #d30f0f;
+}
+/* image format on home page */
+.diner-image
+{
     text-align: center;
 }
-.home-article 
-{
-    background-color: rgb(200, 110, 100);
-}
-.home
-{
-    font-family: 'Times New Roman', Times, serif;
-}
-/*About page formatting*/
 
+/*About page formatting*/
+.about-main
+{
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+}
 
 /*Contact page formatting*/
-
-
-/*Map page formatting*/
-
+.c-main
+{
+    background-color: white;
+    font-size: large;
+    text-align: center;
+}
 
 /*Menu page formatting*/
-.menu-header
-{
-    font-family: cursive;
-    color: red;
-}
-/*This may possibly be unused*/
-.menu-page-item
-{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 35px;
-}
+
+
 /*menu grid formatting*/
 .menu-title
 {
@@ -162,6 +158,7 @@ footer
     text-align: left;
     border-top: 1px solid black;
 
+
 }
 /*Formats Description*/
 .menu-description
@@ -169,6 +166,7 @@ footer
     grid-area: description;
     text-align: center;
     border-top: 1px solid black;
+
 }
 /*Formats Price*/
 .menu-price
@@ -177,6 +175,7 @@ footer
     text-align: right;
     border-left: 1px solid black;
     border-top: 1px solid black;
+
 
 }
 /*Grid within a grid was used to make menu look uniform and easy to read*/
