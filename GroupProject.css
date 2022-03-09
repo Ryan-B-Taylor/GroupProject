@@ -31,6 +31,13 @@ nav
     border: 1px solid black; 
     margin: 5px 5px 5px 5px;     
 }
+/*nav image formatting*/
+.nav-image
+{
+    grid-area: nav-image;
+    margin-top: 5px;
+    margin-right: 5px;
+}
 /*Link list formatting to make it horizontal*/
 ul.link-menu
 {
@@ -79,36 +86,51 @@ footer
 }
 
 .page-container
+/*Added a nav image grid to attemp to make more involved*/
 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 141px;
     grid-template-areas:
-        "nav       nav"
-        "header    header"
-        "content   content"
-        "footer    footer";
+    /* I have extra columns right now to try and find new things
+    will fix before final turn-in*/
+        "nav     nav      nav      nav     nav-image"
+        "header  header   header   header  header"
+        "content content  content  content content"
+        "footer  footer   footer   footer  footer";
+}
+/*Image header formatting*/
+.header-image-left
+{
+grid-area: header;
+float:left
 }
 
+.header-image-right
+{
+grid-area: header;
+float:right 
+}
 
 /* Home page formatting*/
 .hour-container
 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-areas:
-        "header    header"
-        "content   content"
+        "hours   image"
 }
 /* hour list background format */
-.hours
+.hour-list
 {
+    border-radius: 100px;
     background-color: white;
     background-position: center;
     
 }
 /* hour list format*/
-.hour-list
+.hours
 {
+    grid-area: hours;
     font-size: 20px;
     padding: 10px;
     margin: 0;
@@ -123,6 +145,7 @@ footer
 /* image format on home page */
 .diner-image
 {
+    grid-area: image;
     text-align: center;
 }
 

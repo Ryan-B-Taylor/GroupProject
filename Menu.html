@@ -4,30 +4,51 @@
     <meta charset="UTF-8">
     <title>Restaraunt Menu</title>
     <link href="GroupProject.css" type="text/css" rel="Stylesheet" />
+    <script src="GroupProject.js" defer></script>
 </head>
 <body>
 
     <!-- page container for a grid -->
     <div class="page-container">
 
-        <!-- sidebar content -->
+        <!-- navigation content -->
         <nav>
             <ul class="link-menu">
             <li class="link-item"><p><a href="Index.html">Home</a></p></li>
             <li class="link-item"><p><a href="Menu.html">Menu</a></p></li>
+            <li class="link-item"><p><a href="Takeout.html">Order Takeout</a></p></li>
             <li class="link-item"><p><a href="Map.html">Map</a></p></li>
             <li class="link-item"><p><a href="Contact.html">Contact Us</a></p></li>
             <li class="link-item"><p><a href="About.html">About Us</a></p></li>
             </ul>
         </nav>
 
+        <!--Navigation image pixel height matches height of nav bar-->
+        <div class ="nav-image">
+            <img src="NYCFlag.png" width="100%" height="85px"> 
+        </div>
+
     <!-- header content -->
-    <header class="menu-header">
-        <h1><img src="Silverware.png" style="float:left" height="10%" width="10%">Menu<img src="ChefHat.png" style="float:right" height="10%" width="10%"></h1>    
+    <header>
+        <h1>
+            <img class ="header-image-left" src="Silverware.png" height = "10%" width = "10%" >
+            Menu
+            <img class="header-image-right" src="ChefHat.png" height = "10%" width = "10%";>
+        </h1>    
     </header>
 
     <!-- main page content -->
     <main>
+
+        <!--AJAX selectors go here-->
+        <!-- Menu buttons (work in progress) -->
+        <button onclick="GetSomething( '' );">Pizzas</button>
+        <button onclick="GetSomething( '' );">Wings</button>
+        <button onclick="GetSomething( '' );">Sides</button>
+        <button onclick="GetSomething( '' );">Drinks</button>
+
+
+
         <!-- beginning of the menu each menu item gets its own separate grid-->
         <!--Meat lovers pizza-->
         <section class="menu-container">
