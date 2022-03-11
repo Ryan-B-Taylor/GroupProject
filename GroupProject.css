@@ -167,6 +167,22 @@ float:right
 
 /*Menu page formatting*/
 
+/*Button Formatting*/
+.menu-button
+{
+    background-color: rgb(199, 199, 139);
+    font-family: cursive;
+    color: red;
+    font-size: 35px;
+    border-radius: 20px;
+    width: 150px;
+    transition-duration: .5s;
+}
+.menu-button:hover 
+{
+    background-color: #848a2d;
+}
+
 
 /*menu grid formatting*/
 .menu-title
