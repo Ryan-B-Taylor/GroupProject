@@ -44,3 +44,27 @@ box that gives a choice for the size of the pizza or toppings
 if it is a custom pizza
 add values to each size that adds up to a total price
 */
+
+// drag the item 
+function Drag( Takeout )
+{
+    Takeout.dataTransfer.setData( "text/html", Takeout.target.id );
+}
+// allow a drop into the element
+function AllowDrop( Takeout )
+{
+    // prevent the browser from defaulting to not drag
+    Takeout.preventDefault();
+}
+// handle dropping here
+function Drop( Takeout, Cart )
+{
+  //get id of element being dragged
+    var ItemID = Takeout.dataTransfer.getData( "text/html" );
+
+    //copy drag element and put it in the drop box
+    Takeout.target.appendChild( document.getElementById( ItemID ).cloneNode( true ));
+
+   //prevent browser from defaulting to not drops
+    Takeout.preventDefault();
+}

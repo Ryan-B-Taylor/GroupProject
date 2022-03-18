@@ -37,9 +37,44 @@
     </header>
     <!--Main Page content-->
     <main>   
+        <!--Takeout-->
         <section class="takeout-container">
-            <!--Takeout drag and drop goes here-->
+            <section>
+            <h2>List of Items</h2>
+            <!--Menu list for each item-->
+            <div id = "TakeoutList" class = "MenuList">
+                <div id = "menuitem1" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="MeatLovers.png" width="10%" height="10%">Meat Lover's Pizza</div>
+                <div id = "menuitem2" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="SpecialPizza.webp" width="10%" height="10%">Special Pizza</div>
+                <div id = "menuitem3" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="BuffaloChicken.png" width="10%" height="10%">BuffaloChicken</div>
+                <div id = "menuitem4" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="Cheese.png" width="10%" height="10%">Build Your Own</div>
+                <div id = "menuitem5" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="ChickenWing.jpeg" width="10%" height="10%">6 Wings</div>
+                <div id = "menuitem6" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="ChickenWing.jpeg" width="10%" height="10%">12 Wings</div>
+                <div id = "menuitem7" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="BreadStick.png" width="10%" height="10%">Bread Sticks</div>
+                <div id = "menuitem8" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="Ranch.jpg" width="10%" height="10%">Dressings</div>
+                <div id = "menuitem9" class = "menuitem" draggable="true" ondragstart="Drag( event );">
+                    <img src="Soda.jpg" width="10%" height="10%">Soda</div>
+
+            </div>
+            </section>
+            <!--End of menu list-->
+            <section>
+                <h2>Takeout Box</h2>
+                <!--Takeout Drop Box-->
+                <div id = "TakeoutBox" class = "TakeoutList"  ondragover="AllowDrop( event );" ondrop="Drop( event, 'TakeoutBox' );">
+            
+                </div>
+            </section>
         </section>
+        <!--End of Takeout-->
     </main>
+    </div>
 </body>
 </html>

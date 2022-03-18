@@ -259,3 +259,24 @@ without creating overlapping borders*/
     margin-right: auto;
     width: 100%;
 }
+/* Takeout Formatting */
+.takeout-container
+{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 2px 2px;
+}
+.TakeoutList
+{
+    background-color: white;
+    min-height: 400px;
+}
+.MenuList
+{
+    font-size: 25px;
+}
+.menuitem
+{
+    margin: 5px 5px 5px 5px;
+    border: 1px white;
+}
