@@ -134,5 +134,5 @@ function ComputePrice()
    // Price /= Count;
 
     //get the output 
-    document.querySelector("div[id=\"destination\"] + p").innerHTML = "Your Total Price is: $" + Price;
+    document.querySelector("div[id=\"destination\"] + h2").innerHTML = "Your Total Price is: $" + Price;
 }

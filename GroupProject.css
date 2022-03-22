@@ -101,13 +101,11 @@ footer
 /*Image header formatting*/
 .header-image-left
 {
-grid-area: header;
 float:left
 }
 
 .header-image-right
 {
-grid-area: header;
 float:right 
 }
 
@@ -225,6 +223,13 @@ float:right
 
 
 }
+.menu-price-special
+{
+    grid-area: price;
+    text-align: center;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
 /*Grid within a grid was used to make menu look uniform and easy to read*/
 .menu-container
 {
@@ -263,13 +268,16 @@ without creating overlapping borders*/
 .takeout-container
 {
     display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-gap: 2px 2px;
+    grid-template-columns: 75% 25%;
+    grid-template-areas: 
+        "takeout-menu    takeout-dropbox";
 }
 .TakeoutList
 {
     background-color: white;
-    min-height: 400px;
+    /* min-height:400px; */
+    height: 75%;
+    width: 100%
 }
 .MenuList
 {
@@ -279,4 +287,20 @@ without creating overlapping borders*/
 {
     margin: 5px 5px 5px 5px;
     border: 1px white;
+    background-color: rgb(199, 199, 139);
+    border-radius: 20px;
+    width: auto;
+    transition-duration: .5s;
+}
+.menuitem:hover 
+{
+    background-color: #848a2d;
+}
+.menu-box
+{
+    grid-area: takeout-menu;
+}
+.takeout-box
+{
+    grid-area: takeout-dropbox;
 }
