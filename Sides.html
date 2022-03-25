@@ -2,28 +2,34 @@
         <!--Breadsticks-->
         <section class="menu-container">
             <h2 class="menu-title">Sides</h2>
+            <h6 class="menu-subtitle">(Try some of our delicous sides!)</h6>
+
             <div class="menu-image">
-               <img src="BreadStick.png" width="100%" height="100%">                    
+               <img src="Images/BreadStick.png" width="100%" height="100%">                    
            </div>
-           <div class="menu-description">
-               <h4>Breadsticks</h4>
+           <div id = "source" class="menu-description">
+                <div id = "breadsticks" data-price-value="5.00" draggable="true" ondragstart="Drag( event );">
+               <h4 class ="menuitem">Breadsticks</h4>
+                </div>
                <p>Breadsticks come in orders of 8 with dipping pizza sauce</p>
            </div>
            <div class="menu-price">
-               <p><br><br>8 Breadsticks: $4.99</p>
+               <p><br><br>8 Breadsticks: $5.00</p>
            </div>
         </section>
         <!--Dressings-->
         <section class="menu-container-end">
                <div class="menu-image">
-               <img src="Ranch.jpg" width="100%" height="100%">                    
+               <img src="Images/Ranch.jpg" width="100%" height="100%">                    
            </div>
            <div class="menu-description">
                <h4>Dressings</h4>
                <table class="menu-table">
                 <td>
-                    Ranch<br>
-                    Blue Cheese
+                    <div id = "source">
+                    <div id = "ranch" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Ranch<br></span></div>
+                    <div id = "bluecheese" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Blue Cheese</span></div>
+                    </div>
                 </td>
                 </table>
         </div>

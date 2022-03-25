@@ -40,16 +40,14 @@ function GetCategory(CategoryFileName)
 }
 
 /* Add takeout menu drag and drop functionality
-When an item is dragged over such as pizza give an alert
-box that gives a choice for the size of the pizza or toppings 
-if it is a custom pizza
-add values to each size that adds up to a total price
+Drag item name to add to cart double click to remove
 */
 
 // drag the item 
 function Drag( Takeout )
 {
     Takeout.dataTransfer.setData( "text/html", Takeout.target.id );
+
 }
 // allow a drop into the element
 function AllowDrop( Takeout )
@@ -58,81 +56,127 @@ function AllowDrop( Takeout )
     Takeout.preventDefault();
 }
 // handle dropping here
-function Drop( Takeout, Cart )
+function Drop( Takeout, DestinationID )
 {
   //get id of element being dragged
     var ItemID = Takeout.dataTransfer.getData( "text/html" );
+  //  document.getElementById( DestinationID ).innerHTML( document.getElementById( ItemID ));
 
-    //copy drag element and put it in the drop box
-    Takeout.target.appendChild( document.getElementById( ItemID ).cloneNode( true ));
 
    //prevent browser from defaulting to not drops
     Takeout.preventDefault();
-
-   // AddPrice();
+// Call function after Item is dropped call by ID
+    AddPrice(ItemID);
 }
 
-function AddPrice( Price )
+function AddPrice( Price)
 {
     // get price element and price value
-    var SourcePrice = document.querySelector( "div[id=\"source\"] div[id=\"" + Price + "\" ]")
+    
+    var SourcePrice = document.querySelector( "div[id=\"source\"] div[id=\""+Price+"\"]")
     var PriceValue = SourcePrice.getAttribute( "data-price-value" );
 
     // get existing price in calculator
-    var DestinationPrice = document.querySelector( "div[id=\"destination\"] div[id=\"" + Price + "\" ]")
-
+    var DestinationTakeout = document.querySelector("div[id=\"TakeoutBox\"] div[id=\"" + Price + "\"]")
     // check for no price found
-    if (null == DestinationPrice)
+   if (null == DestinationTakeout)
     {
 
         // add a new price
-        DestinationPrice = document.createElement( "DIV" );
+        DestinationTakeout = document.createElement( "DIV" );
 
         // set the element attributes
-        DestinationPrice.setAttribute("id", Price);
-        DestinationPrice.setAttribute("class","price");
-        DestinationPrice.setAttribute("data-price-value", PriceValue);
-        DestinationPrice.setAttribute("data-count", 1);
+        DestinationTakeout.setAttribute("id", Price);
+        DestinationTakeout.setAttribute("class","price");
+        DestinationTakeout.setAttribute("data-price-value", PriceValue);
+        DestinationTakeout.setAttribute("data-count", 1);
 
-        //add text for price in the calculator (not needed)
-       // DestinationPrice.innerHTML = Price + "<br />(1)";
+       
+
+        // add a handler for double clicks
+        DestinationTakeout.addEventListener( "dblclick", function () { RemovePrice( Price ); } );        
+
+        //add text for price in the calculator ( used ID from Price Variable)
+       DestinationTakeout.innerHTML = document.getElementById(Price).innerHTML + "<p class ='menuitem' >(1)</p>" ;
 
         // add the element to the destination div
-        document.querySelector("div[id=\"destination\"]" ).appendChild( DestinationPrice );
+        document.querySelector("div[id=\"TakeoutBox\"]" ).appendChild( DestinationTakeout );
 
     }
     else
     {
         //update existing price
-        var Count = Number( DestinationPrice.getAttribute( "data-count")) + 1;
-        DestinationPrice.setAttribute( "data-count", Count);
-        //DestinationPrice.innerHTML = Price + "<br />(" + Count + ")";
-    }
-
+        var Count = Number( DestinationTakeout.getAttribute( "data-count")) + 1;
+        DestinationTakeout.setAttribute( "data-count", Count);
+       DestinationTakeout.innerHTML = document.getElementById(Price).innerHTML + "<p class ='menuitem' >("+Count+")</p>" ;
+    } 
+    
     ComputePrice();
 }
 
 function ComputePrice()
 {
     //get the list of prices
-    var PriceList = document.querySelectorAll("div[id=\"destination\"] div");
+    var PriceList = document.querySelectorAll("div[id=\"TakeoutBox\"] div");
 
     // initialize price
-    var Price = 0.0;
+    var Total = 0.0;
     var Count = 0;
 
     //total the point values
     for (var i =0; i<PriceList.length; i++ )
     {
     // add price values and count
-    Price += PriceList[i].getAttribute( "data-price-value") *
+    Total += PriceList[i].getAttribute( "data-price-value") *
              PriceList[i].getAttribute( "data-count");
     Count += Number( PriceList[i].getAttribute( "data-count"));
     }
 
-    //divide by how many
-   // Price /= Count;
 
     //get the output 
-    document.querySelector("div[id=\"destination\"] + h2").innerHTML = "Your Total Price is: $" + Price;
+    document.querySelector("div[id=\"destination\"] + h2").innerHTML = "Your Total Price is: $" + Total;
 }
+
+
+// remove price function
+function RemovePrice( Price )
+{
+  
+  // prompt the user
+  var Result = window.confirm( "Remove the Item?" );  
+  
+  // process based on the result
+  if ( Result == true )
+  {
+      // get the existing grade in the calculator
+      var DestinationTakeout= document.querySelector("div[id=\"TakeoutBox\"] div[id=\"" + Price + "\"]")
+
+      // drop the count down by one
+      var Count = Number( DestinationTakeout.getAttribute( "data-count" )) - 1;
+          
+
+  } 
+
+
+   
+  
+  // see if it is the last
+    if ( 0 == Count )
+  {
+    
+      // remove the node
+       DestinationTakeout.parentNode.removeChild( DestinationTakeout);
+
+  }
+  else
+  {
+    
+      // update the count
+      DestinationTakeout.setAttribute( "data-count", Count );
+      DestinationTakeout.innerHTML = document.getElementById(Price).innerHTML + "<p class ='menuitem' >("+Count+")</p>" ;      
+  }  
+  
+    ComputePrice();
+
+}
+

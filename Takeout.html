@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
-    <title>Takeout Orders</title>
+    <title> Order Takeout</title>
     <link href="GroupProject.css" type="text/css" rel="Stylesheet" />
     <script src="GroupProject.js" defer></script>
 </head>
@@ -47,44 +47,24 @@
 
         <!--Takeout-->
         <section class="takeout-container">
-           <!-- <h2>List of Items</h2> -->
             <!--Menu list for each item-->
 
-            <!--Use ondragend to call AddPrice function-->
+            <!--Use ondrop to call AddPrice function-->
             
 
             <!-- section where menu category will go-->
             <section id= "menucategory" class = "menu-box">
             <section>
-                <h1>Click on a button to display menu items!</h1>
+                <!--AJAX is displayed here-->
+                <h1 class="menu-start">Click on a button to display menu items!</h1>
             </section>
-        <!--   <div id = "source" class = "MenuList">
-                <div id = "menuitem1" class = "menuitem" data-price-value="14.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem1' );">
-                    <img src="MeatLovers.png" width="10%" height="10%">Meat Lover's Pizza</div>
-                <div id = "menuitem2" class = "menuitem" data-price-value="16.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem2' );">
-                    <img src="SpecialPizza.webp" width="10%" height="10%">Special Pizza</div>
-                <div id = "menuitem3" class = "menuitem" data-price-value="15.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem3' );">
-                    <img src="BuffaloChicken.png" width="10%" height="10%">Buffalo Chicken Pizza</div>
-                <div id = "menuitem4" class = "menuitem" data-price-value="9.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem4' );">
-                    <img src="Cheese.png" width="10%" height="10%">Build Your Own</div>
-                <div id = "menuitem5" class = "menuitem" data-price-value="6.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem5' );">
-                    <img src="ChickenWing.jpeg" width="10%" height="10%">6 Wings</div>
-                <div id = "menuitem6" class = "menuitem" data-price-value="13.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem6' );">
-                    <img src="ChickenWing.jpeg" width="10%" height="10%">12 Wings</div>
-                <div id = "menuitem7" class = "menuitem" data-price-value="4.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem7' );">
-                    <img src="BreadStick.png" width="10%" height="10%">Bread Sticks</div>
-                <div id = "menuitem8" class = "menuitem" data-price-value="1.00" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem8' );">
-                    <img src="Ranch.jpg" width="10%" height="10%">Dressings</div>
-                <div id = "menuitem9" class = "menuitem" data-price-value="1.99" draggable="true" ondragstart="Drag( event );" ondragend="AddPrice( 'menuitem9' );">
-                    <img src="Soda.jpg" width="10%" height="10%">Soda</div>
-                
-            </div> -->
             </section>
             <!--End of menu list-->
             <section class="takeout-box">
                 <h2>Drag item names here to order them!</h2>
+                <h3>Double Click Item names to remove them from the cart.</h3>
                 <!--Takeout Drop Box-->
-                <div id = "TakeoutBox" class = "TakeoutList"  ondragover="AllowDrop( event );" ondrop="Drop( event, 'TakeoutBox' );">
+                <div id = "TakeoutBox" class = "TakeoutList"  ondragover="AllowDrop( event );"  ondrop="Drop( event, 'TakeoutBox' );">
                 </div>
                 <div>
                     <div id="destination">

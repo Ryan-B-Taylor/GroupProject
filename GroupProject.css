@@ -275,9 +275,10 @@ without creating overlapping borders*/
 .TakeoutList
 {
     background-color: white;
-    /* min-height:400px; */
+    min-height: auto;
     height: 75%;
-    width: 100%
+    width: 100%;
+    overflow: scroll;
 }
 .MenuList
 {
@@ -303,4 +304,10 @@ without creating overlapping borders*/
 .takeout-box
 {
     grid-area: takeout-dropbox;
+    margin-top: 120px;
+}
+.menu-start
+{
+    font-size: 200%;
+    margin-top: 150px;
 }

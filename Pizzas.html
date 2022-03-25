@@ -4,75 +4,87 @@
             <h2 class="menu-title">Pizzas</h2>
             <h6 class="menu-subtitle">(All pizzas are hand tossed and topped with our homemade pizza sauce and cheese unless otherwise stated)</h6>
              <div class="menu-image">
-                <img src="MeatLovers.png" width="100%" height="100%">                    
+                <img src="Images/MeatLovers.png" width="100%" height="100%">                    
             </div>
-            <div class="menu-description">
-                <h4>Meat Lovers Pizza</h4>
+            <div id = "source" class="menu-description">
+            <div id = "meatlover" data-price-value="17.00" draggable="true" ondragstart="Drag( event );">
+            <h4 class = "menuitem">Meat Lovers Pizza</h4>
+            </div>
                 <p>Cheese pizza topped with pepperoni, ground beef, bacon, ham, and sausage</p>  
             </div>
             <div class="menu-price">
                 <!--Page Breaks used across code because I found that to be an effective way to separate text-->
-                <p><br><br>Small 12": $14.99<br><br>Medium 14": $16.99<br><br> Large 16": $19.99</p>
+                <p><br><br>Regular Size: $17.00<br><br></p>
             </div>
         </section>
         <!--Special pizza-->
         <section class="menu-container">
              <div class="menu-image">
-                <img src="SpecialPizza.webp" width="100%" height="100%">                    
+                <img src="Images/SpecialPizza.webp" width="100%" height="100%">                    
             </div>
-            <div class="menu-description">
-                <h4>Manhattan Special Pizza</h4>
+            <div id = "source" class="menu-description">
+                <div id = "manhattanspecial" data-price-value="19.00" draggable="true" ondragstart="Drag( event );">
+                <h4 class="menuitem">Manhattan Special Pizza</h4>
+                </div>
                 <p>Our special pizza has extra cheese, pepperoni, sausage, bacon, mushrooms, green peppers, and black olives</p>  
             </div>
             <div class="menu-price">
-                <p><br><br>Small 12": $16.99<br><br>Medium 14": $18.99<br><br> Large 16": $21.99</p>
+                <p><br><br>Regular Size: $19.00<br><br></p>
             </div>
         </section>
         <!--Buffalo Chicken pizza-->
         <section class="menu-container">
             <div class="menu-image">
-               <img src="BuffaloChicken.png" width="100%" height="100%">                    
+               <img src="Images/BuffaloChicken.png" width="100%" height="100%">                    
            </div>
-           <div class="menu-description">
-               <h4>Buffalo Chicken</h4>
+           <div id = "source" class="menu-description">
+                <div id = "buffalochicken" data-price-value="18.00" draggable="true" ondragstart="Drag( event );">
+                <h4 class = "menuitem">Buffalo Chicken</h4>
+                </div>
                <p>This pizza has ranch sauce, extra cheese, and is topped with crispy buffalo chicken, ranch, and hotsauce</p>  
            </div>
            <div class="menu-price">
-               <p><br><br>Small 12": $15.99<br><br>Medium 14": $17.99<br><br> Large 16": $20.99</p>
-           </div>
+                <p><br><br>Regular Size: $18.00<br><br></p>
+        </div>
         </section>
         <!--Create custom pizza contains table for toppings-->
         <section class="menu-container-end">
             
             <div class="menu-image">
-               <img src="Cheese.png" width="100%" height="100%">                    
+               <img src="Images/Cheese.png" width="100%" height="100%">                    
            </div>
-           <div class="menu-description">
-               <h4>Build Your Own Pizza!</h4>
+           <div id = "source" class="menu-description">
+                <div id = "custompizza" data-price-value="12.00" draggable="true" ondragstart="Drag( event );">
+               <h4 class = "menuitem">Build Your Own Pizza!</h4>
+               </div>
                <table class="menu-table">
                    <thead>
                        <th>Vegetables</th>
                        <th>Meats</th>
                    </thead>
                    <td>
-                        Green peppers<br>
-                        Mushrooms<br>
-                        Black Olives<br>
-                        Spinach<br>
-                        Tomatoes<br>
-                        Pineapple
+                    <div id = "source">
+                        <div id = "greenpeppers" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Green peppers<br></span></div>
+                        <div id = "mushrooms" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Mushrooms<br></span></div>
+                        <div id = "blackolives" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Black Olives<br></span></div>
+                        <div id = "spinach" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Spinach<br></span></div>
+                        <div id = "tomatoes" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Tomatoes<br></span></div>
+                        <div id = "pineapple" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Pineapple</span></div>
+                    </div>
                    </td>
                    <td>
-                        Pepperoni<br>
-                        Sausage<br>
-                        Ham<br>
-                        Beef<br>
-                        Chicken
+                    <div id = "source">
+                        <div id = "pepperoni" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Pepperoni<br></span></div>
+                        <div id = "sausage" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Sausage<br></span></div>
+                        <div id = "ham" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Ham<br></span></div>
+                        <div id = "beef" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Beef<br></span></div>
+                        <div id = "chicken" data-price-value="1.00" draggable="true" ondragstart="Drag( event );"><span class = "menuitem">Chicken</span></div>
+                    </div>
                    </td>
 
                </table>
            </div>
            <div class="menu-price">
-                <p><br>Small 12" $9.99<br>Each Topping: $.75<br><br>Medium 14": $11.99<br>Each Topping: $1.25<br><br> Large 16": $13.99<br> Each Topping: $2.00</p>
+                <p><br><br>Regular Size: $12.00<br><br>Each Topping: $1.00</p>
            </div>
         </section>
